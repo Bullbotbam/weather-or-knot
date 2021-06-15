@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div id="container">
+      <h1 class="header-title">Weather Dashboard</h1>
+      <div id="search-section">
+        <div id="search-text" class="search-item">Search For a City</div>
+        <input type="search" name="city-search" id="search-box" />
+        <button id="searchBtn" type="submit">Search</button>
+      </div>
+      <div id="results"></div>
+      <div id="search-display" class="display-info"></div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+  <!-- // might need momment for time -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>
