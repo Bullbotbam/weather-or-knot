@@ -9,16 +9,27 @@
   <link rel="stylesheet" href="./assets/css/bootstrap.min (2).css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <body>
-    <div class="jumbotron">
+    <div class="jumbotron container-fluid mt-2 text-center p-2 bg-success">
       <h1 class="header-title">Weather Dashboard</h1>
     </div>
     <div id="container">
-      <div id="search-section" class="col-12 col-md-3 search-group">
-        <form id="searchForm">
-          <h4 id="search-text" class="search-item">Search For a City</h4>
-          <input type="search" name="city-search" id="search-box" />
-          <button id="searchBtn" type="submit">Search</button>
-        </form>
+      <div class="row">
+        <div id="search-section" class="col-12 col-md-3 search-group">
+          <form id="searchForm" class="default">
+            <h4 id="search-text" class="search-item">Search For a City</h4>
+            <input
+              type="search"
+              name="city-search"
+              id="search-box"
+              class="col-form-label mt-4"
+              placeholder="Enter City Name Here"
+            />
+            <!-- create column and large button -->
+            <button id="search-btn" class="btn btn-lg btn-info" type="button">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
       <div id="results"></div>
       <div id="search-display" class="display-info"></div>
