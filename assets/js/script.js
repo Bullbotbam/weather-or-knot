@@ -18,24 +18,28 @@ const URL = "https:/api.openweathermap.org/data/2.5/forecast?q="
 const API_KEY = "&appid=2cbbc321cf75eab66be5e594226b3a84"
   console.log("Hello");
   
-  let response = await fetch(`${URL} + ${API_KEY}`)
+  let response = await fetch(`${URL} + houston + ${API_KEY}`)
   console.log(response)
 
   // collect data received to API
   let data = await response.json()
   console.log(data)
+  function useApiData (data){
+    // assign the data to be used to the container
+    document.querySelector("#search-display").innerHTML = `<div class="card col-8 offset-2">
+    <div class="card">
+    <div class="card-body">
+    <h4 class="city-name">${data.city.name}</h4>  
+      This is some text within a card body.
+    </div>
+  </div>`
+  
+  }
+  console.log(useApiData)
+  console.log(data)
 }
 
-function useApiData (data){
-  // assign the data to be used to the container
-  document.querySelector("#search-display").innerHTML = `<div class="card col-8 offset-2">
-  <div class="card">
-  <div class="card-body">
-  <h4 class="city-name">${data.city}</h4>  
-    This is some text within a card body.
-  </div>
-</div>`
-}
+
 
 
 //   .then(function(response) {
