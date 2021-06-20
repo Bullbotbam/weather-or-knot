@@ -1,29 +1,50 @@
 let searchBtn = document.querySelector("#search-btn")
 let citySearch = document.querySelector("#search-box")
   searchBtn.addEventListener("click", ()=>{
-    console.log(button);
+    console.log("button");
+    weatherApp()
   });
 
 
 
 
-function myFunction() {
+// function to make API call
+
+async function weatherApp  () {
+  // openweathermap url endpoint  
+const URL = "https:/api.openweathermap.org/data/2.5/forecast?q="
+
+// api key 
+const API_KEY = "&appid=2cbbc321cf75eab66be5e594226b3a84"
   console.log("Hello");
-  // api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={API key}
-  fetch("https://community-open-weather-map.p.rapidapi.com/forecast?q=san%20francisco%2Cus&units=imperial&lang=english", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "5c7de9724dmsh5a75b580091d59bp1083f5jsn1a89bc56379b",
-      "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
-    }
-  })
-  .then(response => {
-    console.log(response);
-  })
-  .catch(err => {
-    console.error(err);
-  });
+  
+  let response = await fetch(`${URL} + ${API_KEY}`)
+  console.log(response)
+
+  // collect data received to API
+  let data = await response.json()
+  console.log(data)
 }
+
+function useApiData (data){
+  // assign the data to be used to the container
+  document.querySelector("#search-display").innerHTML = `<div class="card col-8 offset-2">
+  <div class="card">
+  <div class="card-body">
+  <h4 class="city-name">${data.city}</h4>  
+    This is some text within a card body.
+  </div>
+</div>`
+}
+
+
+//   .then(function(response) {
+  //     return response.json()
+  // })
+  // .catch(err => {
+  //   console.error(err);
+  // });
+
 
 //  Method for using "date" objects obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 // const currentDate = new Date(response.data.dt * 1000);
@@ -33,6 +54,3 @@ function myFunction() {
 // const year = currentDate.getFullYear();
 // nameEl.innerHTML =
 //   response.data.name + " (" + month + "/" + day + "/" + year + ") ";
-
-
-  
