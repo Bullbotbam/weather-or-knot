@@ -1,6 +1,8 @@
 # weather-or-knot
 This is a weather app to give the user weather information from different cities
 
+[Soon to be working app](https://bullbotbam.github.io/weather-or-knot/)
+
 ## Weather Dashboard
 
 App uses the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. 
